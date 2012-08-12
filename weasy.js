@@ -16,14 +16,14 @@
         });
         
         $( this ).blur(function() {
-            if ( that.isFieldFilled( $(this) ) ) {
+            if ( that.isFieldFilled() ) {
                 return that.setPlaceholder( str );
             }
         });
         
     };
     
-    $.fn.isFieldFilled = function( el ) {
+    $.fn.isFieldFilled = function() {
         if ( !$(this).val() ) {
             return true;
         }
@@ -42,22 +42,24 @@
         return false;
     };
 
-    $.fn.isTextInput = function( el ) {
-        if ( el.attr( 'type' ) != 'text' ) {
-            if ( el.attr( 'class' ) ) {
-                console.log( el.attr( 'class' ) + ' is not a text input' );
+    $.fn.isTextInput = function() {
+        if ( $(this).attr( 'type' ) != 'text' ) {
+            if ( $(this).attr( 'class' ) ) {
+                console.log( $(this).attr( 'class' ) + ' is not a text input' );
                 return false;
-            } else if ( el.attr(' id' ) ) {
-                console.log( el.attr( 'id' ) + ' is not a text input' );
+            } else if ( $(this).attr(' id' ) ) {
+                console.log( $(this).attr( 'id' ) + ' is not a text input' );
                 return false;
             }
-            console.log( el[0].nodeName + ' is not a text input' );
+            console.log( $(this)[0].nodeName + ' is not a text input' );
             return false;
         }
+        console.log('yes');
+        return true;
     };
 
-    $.fn.removeInputValue = function( el ) {
-        if ( el.val() ) {
+    $.fn.removeInputValue = function() {
+        if ( $(this).val() ) {
             return $(this).val( '' );
         }
         return false;
