@@ -1,7 +1,7 @@
 weasy
 =====
 
-A simple javascript library that focus on basic daily usage.
+A simple javascript library on top of jQuery that focus on basic daily usage.
 
 ## Avaiable methods
 
